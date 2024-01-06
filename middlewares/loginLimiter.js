@@ -1,7 +1,7 @@
 const rateLimit = require("express-rate-limit");
-const { logEvents } = require("../middlewares/logger");
+const { logEvents } = require("./logger");
 
-const loginLimitter = rateLimit({
+const loginLimiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
   max: 5, // Limiet each IP to 5 login requests per `window` per minute
   message: {
@@ -19,4 +19,4 @@ const loginLimitter = rateLimit({
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
 
-module.exports = loginLimitter;
+module.exports = loginLimiter;
