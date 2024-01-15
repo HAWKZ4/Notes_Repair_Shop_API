@@ -30,7 +30,7 @@ const login = asyncHandler(async (req, res) => {
     {
       userInfo: {
         username: foundUser.username,
-        password: foundUser.password,
+        roles: foundUser.roles,
       },
     },
     process.env.ACCESS_TOKEN_SECRET,
